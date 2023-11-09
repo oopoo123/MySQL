@@ -20,6 +20,8 @@ if menu == '0':
     for member in rows:
         print(member)
     cur.execute(sql)  # sql문 실행
+
+elif menu == '1':
     print("----- 회원가입 -----")
     memberId = input("1. 회원아이디 : ")
     memberPw = input("2. 회원비밀번호 : ")
@@ -55,10 +57,10 @@ rows = cur.fetchall() # 해당 테이블의 모든 레코드가 튜플구조로 
 
 # print(rows)
 
-# print("=========== 회원 전체 리스트 조회 =============")
-# print("회원아이디 / 비밀번호 / 회원이름 / 전화번호")
-# for member in rows:
-#     print(member)
+print("=========== 회원 전체 리스트 조회 =============")
+print("회원아이디 / 비밀번호 / 회원이름 / 전화번호")
+for member in rows:
+    print(member)
 
 cur.close()
 conn.commit() # insert, delete, update 사용했을 경우에는 commit을 반드시 해줘야 함!
